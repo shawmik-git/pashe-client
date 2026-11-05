@@ -1,6 +1,6 @@
 import { authClient } from "./auth-client";
 
-const BASE = process.env.NEXT_PUBLIC_API_URL;
+const BASE = process.env.NEXT_PUBLIC_API_URL || "https://pashe-server.vercel.app";
 
 // auth: true attaches a fresh JWT from Better Auth as a Bearer token.
 export async function api(path, { method = "GET", body, auth = false } = {}) {
