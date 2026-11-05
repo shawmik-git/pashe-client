@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "pashe";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #fbfcfa;
+  --color-base-200: #eef3ef;
+  --color-base-300: #d6e2db;
+  --color-base-content: #10302f;
+  --color-primary: #0f5b4a;
+  --color-primary-content: #ffffff;
+  --color-secondary: #f2a516;
+  --color-secondary-content: #231600;
+  --color-accent: #1f6f8b;
+  --color-accent-content: #ffffff;
+  --color-neutral: #0e2b2a;
+  --color-neutral-content: #e8f0ec;
+  --color-info: #2f6fa3;
+  --color-info-content: #ffffff;
+  --color-success: #2e8b57;
+  --color-success-content: #ffffff;
+  --color-warning: #f2a516;
+  --color-warning-content: #231600;
+  --color-error: #c2402a;
+  --color-error-content: #ffffff;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "pashe-dark";
+  default: false;
+  prefersdark: false;
+  color-scheme: dark;
+  --color-base-100: #0d1f1e;
+  --color-base-200: #132a28;
+  --color-base-300: #1f3a37;
+  --color-base-content: #e4eee9;
+  --color-primary: #3fb596;
+  --color-primary-content: #04201a;
+  --color-secondary: #f5b83d;
+  --color-secondary-content: #231600;
+  --color-accent: #5bb5d5;
+  --color-accent-content: #04202b;
+  --color-neutral: #1f3a37;
+  --color-neutral-content: #e4eee9;
+  --color-info: #5b9bd5;
+  --color-info-content: #04182b;
+  --color-success: #4cc38a;
+  --color-success-content: #04200f;
+  --color-warning: #f5b83d;
+  --color-warning-content: #231600;
+  --color-error: #ef7a63;
+  --color-error-content: #2b0a03;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 2px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .section { @apply py-16 md:py-20; }
+  .section-title { @apply font-display text-3xl font-bold leading-tight tracking-tight md:text-4xl; }
+  .section-sub { @apply mt-3 max-w-xl text-base-content/70; }
+}
