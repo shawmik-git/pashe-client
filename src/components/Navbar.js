@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -11,6 +12,15 @@ export default function Navbar() {
   const { data, isPending } = authClient.useSession();
   const router = useRouter();
   const user = data?.user;
+
+  // Shows the welcome toast after returning from GitHub login.
+  useEffect(() => {
+    if (user && sessionStorage.getItem("justLoggedIn")) {
+      sessionStorage.removeItem("justLoggedIn");
+      toast.success(`Welcome, ${user.name}!`);
+    }
+  }, [user]);
+
   const close = () => document.activeElement?.blur();
   const logout = async () => {
     close();

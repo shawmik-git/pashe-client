@@ -6,8 +6,12 @@ import { nextPath } from "@/lib/utils";
 
 export default function GithubButton() {
   const go = async () => {
+    sessionStorage.setItem("justLoggedIn", "1");
     const { error } = await authClient.signIn.social({ provider: "github", callbackURL: nextPath() });
-    if (error) toast.error(error.message || "GitHub sign-in failed. Try again.");
+    if (error) {
+      sessionStorage.removeItem("justLoggedIn");
+      toast.error(error.message || "GitHub sign-in failed. Try again.");
+    }
   };
   return (
     <button type="button" onClick={go} className="btn btn-outline w-full">
