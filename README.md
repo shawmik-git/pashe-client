@@ -1,7 +1,8 @@
 # Pashe
 
-**Live site:** https://your-pashe-site.vercel.app
-**API repo:** link your `pashe-server` repository here
+**Live site:** https://pashe-client.vercel.app
+**Live API:** https://pashe-server.vercel.app
+**API repo:** https://github.com/shawmik-git/pashe-server
 
 Pashe (“by your side”) is a community platform where neighbours create, join and track social service events: winter clothes drives, blanket distribution, tree plantations, blood donation camps and clean-ups.
 
